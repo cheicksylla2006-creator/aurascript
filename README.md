@@ -34,13 +34,14 @@ Or add it from the Claude directory once it is listed.
 
 ## Requirements
 
-- **Aura Script 2.5.0 or later** on Windows ([Microsoft Store](https://apps.microsoft.com/detail/9nsqkw8c6xp8)) or Linux ([releases](https://github.com/cheicksylla2006-creator/aurascript/releases)), free.
+- **Aura Script 2.5.1 or later** on Windows ([Microsoft Store](https://apps.microsoft.com/detail/9nsqkw8c6xp8)) or Linux ([releases](https://github.com/cheicksylla2006-creator/aurascript/releases)), free.
 - In Aura Script: **Settings › Connectors › Enable the local MCP connector** (or "Connect detected assistants").
+- Requires **Aura Script 2.5.1 or later** (signed protocol).
 - Node.js is used to start the connector (bundled with Claude Desktop; install it for Claude Code).
 
 ## How it works
 
-The plugin starts a small local MCP server (`server/aura-mcp.js`, standard library only, no dependencies). It talks to Aura Script through a **local Windows named pipe** protected by a random token stored in your user profile. It opens **no network port** and **contacts no server** — no account, no telemetry.
+The plugin starts a small local MCP server (`server/aura-mcp.js`, standard library only, no dependencies). It talks to Aura Script through a **local channel with a random name** (named pipe on Windows, private 0600 socket on Linux). Every request is **signed (HMAC-SHA256) with a one-time nonce** and every reply is signed by Aura Script: replayed, modified or stale messages are rejected, and the secret key — renewed at every launch — never travels. It opens **no network port** and **contacts no server** — no account, no telemetry. See [SECURITY.md](SECURITY.md).
 
 - **Aura Script open:** all tools, with the permissions you set in the app (shared documents only, or the whole library; ask before every change, allow, or forbid changes).
 - **Aura Script closed:** read-only access to the documents you shared; a new document is queued and offered to you next time you open the app.
