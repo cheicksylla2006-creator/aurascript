@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "aura-script": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/server/aura-mcp.js"
+      ]
+    }
+  }
+}

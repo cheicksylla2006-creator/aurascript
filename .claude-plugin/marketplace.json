@@ -1,0 +1,16 @@
+{
+  "name": "aura-script",
+  "description": "Aura Script for Claude — use your local Windows writing workspace from Claude.",
+  "owner": {
+    "name": "SyllaBora",
+    "email": "cheicksylla615@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "aura-script",
+      "source": "./",
+      "description": "Use Aura Script — a free, local workspace for Windows and Linux — documents, slides, spreadsheets, canvas and code — as Claude’s working environment. Everything stays on your PC.",
+      "version": "2.5.0"
+    }
+  ]
+}

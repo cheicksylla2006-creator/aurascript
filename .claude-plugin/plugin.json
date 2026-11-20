@@ -1,0 +1,24 @@
+{
+  "name": "aura-script",
+  "displayName": "Aura Script",
+  "version": "2.5.0",
+  "description": "Use Aura Script — a free, local workspace for Windows and Linux — documents, slides, spreadsheets, canvas and code — as Claude’s working environment. Everything stays on your PC.",
+  "author": {
+    "name": "SyllaBora",
+    "email": "cheicksylla615@gmail.com",
+    "url": "https://aura-script.com"
+  },
+  "homepage": "https://aura-script.com",
+  "repository": "https://github.com/cheicksylla2006-creator/aurascript",
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "writing",
+    "documents",
+    "presentations",
+    "spreadsheet",
+    "local",
+    "privacy",
+    "windows",
+    "productivity"
+  ]
+}
