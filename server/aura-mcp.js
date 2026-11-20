@@ -13,10 +13,10 @@
  * ELECTRON_RUN_AS_NODE=1) suffit.
  */
 'use strict';
-const fs = require('fs'), path = require('path'), net = require('net');
+const fs = require('fs'), path = require('path'), net = require('net'), crypto = require('crypto');
 const VERSIONS = ['2025-11-25', '2025-06-18', '2025-03-26', '2024-11-05'];
 /* Version du connecteur = version d'Aura Script (vérifié par tools/test-mcp.js). */
-const VERSION = '2.5.0';
+const VERSION = '2.5.1';
 /* Métadonnées de sécurité de CHAQUE outil, en mode connecté comme hors ligne
    (exigence de l'annuaire Anthropic : title + readOnlyHint / destructiveHint).
    Règle suivie : lecture seule → readOnlyHint ; toute écriture (même une création)
@@ -75,8 +75,24 @@ function appeler(type, nom, args, delai) {
     const s = net.connect(c.tube); let tampon = '', fini = false; const id = ++seq;
     const fin = (e, v) => { if (fini) return; fini = true; clearTimeout(t); try { s.destroy(); } catch (_) {} e ? ko(e) : ok(v); };
     const t = setTimeout(() => fin(new Error('délai dépassé')), delai || 310000);
-    s.on('connect', () => s.write(JSON.stringify({ id, jeton: c.jeton, type, nom, args, client: nomClient }) + '\n'));
-    s.on('data', d => { tampon += d; const i = tampon.indexOf('\n'); if (i >= 0) { let r; try { r = JSON.parse(tampon.slice(0, i)); } catch (e) { return fin(e); } r.erreur ? fin(new Error(r.erreur)) : fin(null, r.resultat); } });
+    /* Protocole v2 : le jeton ne circule jamais. La requête est signée (HMAC-SHA256) avec
+       un nonce unique ; la réponse doit être signée par Aura Script, sinon elle est rejetée
+       (protection contre un faux programme qui aurait pris la place du canal). */
+    const nonce = crypto.randomBytes(16).toString('hex');
+    const corps = JSON.stringify({ id, nonce, ts: Date.now(), type, nom, args, client: nomClient });
+    const mac = crypto.createHmac('sha256', c.jeton).update('req|' + corps, 'utf8').digest('hex');
+    s.on('connect', () => s.write(JSON.stringify({ v: 2, corps, mac }) + '\n'));
+    s.on('data', d => {
+      tampon += d; if (tampon.length > 2e7) return fin(new Error('réponse trop volumineuse'));
+      const i = tampon.indexOf('\n'); if (i < 0) return;
+      let r; try { r = JSON.parse(tampon.slice(0, i)); } catch (e) { return fin(e); }
+      if (!r || r.v !== 2 || typeof r.corps !== 'string' || typeof r.mac !== 'string') return fin(new Error(r && r.erreur ? r.erreur : 'réponse non authentifiée'));
+      const att = crypto.createHmac('sha256', c.jeton).update('rep|' + nonce + '|' + r.corps, 'utf8').digest(), m = Buffer.from(r.mac, 'hex');
+      if (m.length !== att.length || !crypto.timingSafeEqual(m, att)) return fin(new Error('réponse non authentifiée (canal usurpé ?)'));
+      let b; try { b = JSON.parse(r.corps); } catch (e) { return fin(e); }
+      if (b.id !== id) return fin(new Error('réponse inattendue'));
+      b.erreur ? fin(new Error(b.erreur)) : fin(null, b.resultat);
+    });
     s.on('error', e => fin(e));
   });
 }
@@ -88,15 +104,36 @@ function partages() {
   try { return fs.readdirSync(c.partage).filter(f => f.endsWith('.json')).map(f => { try { return JSON.parse(fs.readFileSync(path.join(c.partage, f), 'utf8')); } catch (_) { return null; } }).filter(Boolean); } catch (_) { return []; }
 }
 const OUTILS_HORS_LIGNE = [
-  { name: 'list_documents', description: 'Liste les documents que l’utilisateur a partagés avec les assistants (Aura Script est fermé : lecture seule).', inputSchema: { type: 'object', properties: { type: { type: 'string', description: 'texte, slides, sheet, canvas, code, pdf' } } } },
+  { name: 'list_documents', description: 'Liste les documents que l’utilisateur a partagés avec les assistants (Aura Script est fermé : lecture seule).', inputSchema: { type: 'object', properties: { type: { type: 'string', enum: ['texte', 'slides', 'sheet', 'canvas', 'code', 'pdf'], description: 'Filtrer par type' } } } },
   { name: 'read_document', description: 'Lit un document partagé (id obtenu par list_documents).', inputSchema: { type: 'object', properties: { id: { type: 'string' } }, required: ['id'] } },
   { name: 'search_documents', description: 'Cherche un texte dans les documents partagés.', inputSchema: { type: 'object', properties: { query: { type: 'string' } }, required: ['query'] } },
   { name: 'create_document', description: 'Propose un NOUVEAU document (texte en Markdown, sheet en CSV, slides en Markdown « # Titre », code). Aura Script étant fermé, la proposition sera présentée à l’utilisateur à la prochaine ouverture.', inputSchema: { type: 'object', properties: { type: { type: 'string', enum: ['texte', 'sheet', 'slides', 'code'] }, title: { type: 'string' }, content: { type: 'string' } }, required: ['type', 'title', 'content'] } },
 ];
 const OUTILS_HORS_LIGNE_ANNOTES = () => OUTILS_HORS_LIGNE.map(o => { const { annotations: _a, ...base } = o; return { ...base, ...annoter(o.name, o.name === 'create_document') }; });
 const PAS_INSTALLE = 'Aura Script n’est pas encore relié sur cet ordinateur. Installez Aura Script (Microsoft Store, gratuit), puis activez Paramètres › Connecteurs › « Activer le connecteur MCP local ». / Aura Script is not connected on this computer yet: install Aura Script (free, Microsoft Store), then turn on Settings › Connectors › “Enable the local MCP connector”.';
+/* Contrôle des arguments AVANT tout envoi (l'application refait un contrôle strict par outil). */
+function argsInvalides(nom, a) {
+  if (!/^[a-z_]{1,40}$/.test(nom)) return 'nom d’outil invalide';
+  if (!a || typeof a !== 'object' || Array.isArray(a)) return 'un objet est attendu';
+  let n = 0; const sain = (v, p) => { if (p > 8 || ++n > 20000) return false; if (v && typeof v === 'object') for (const k of Object.keys(v)) { if (k === '__proto__' || k === 'constructor' || k === 'prototype' || !sain(v[k], p + 1)) return false; } return true; };
+  if (!sain(a, 0)) return 'structure interdite ou trop profonde';
+  if (JSON.stringify(a).length > 4e6) return 'arguments trop volumineux';
+  return null;
+}
+/* Mode hors ligne : contrôle complet contre le schéma des outils hors ligne. */
+function argsHorsLigneInvalides(nom, a) {
+  const o = OUTILS_HORS_LIGNE.find(x => x.name === nom);
+  if (o) {
+    const pr = o.inputSchema.properties || {};
+    for (const k of Object.keys(a)) if (!(k in pr)) return 'argument inattendu : ' + k;
+    for (const k of (o.inputSchema.required || [])) if (a[k] === undefined || a[k] === '') return 'argument obligatoire manquant : ' + k;
+    for (const [k, v] of Object.entries(a)) { const sc = pr[k]; if (sc.type === 'string' && typeof v !== 'string') return k + ' : texte attendu'; if (sc.enum && !sc.enum.includes(v)) return k + ' : valeur non permise'; }
+  }
+  return null;
+}
 function horsLigne(nom, a) {
   if (!connexion()) throw new Error(PAS_INSTALLE);
+  const refus = argsHorsLigneInvalides(nom, a); if (refus) throw new Error('Arguments refusés : ' + refus);
   const docs = partages();
   if (nom === 'list_documents') return docs.filter(d => !a.type || d.type === a.type).map(d => ({ id: d.id, type: d.type, titre: d.titre, modifie: new Date(d.modifie).toISOString() }));
   if (nom === 'read_document') { const d = docs.find(x => x.id === a.id); if (!d) throw new Error('Document introuvable ou non partagé.'); return d; }
@@ -135,7 +172,9 @@ async function traiter(m) {
     catch (_) { return resultat(id, { tools: OUTILS_HORS_LIGNE_ANNOTES() }); }
   }
   if (method === 'tools/call') {
-    const nom = String(params.name || ''), args = params.arguments || {};
+    const nom = String(params.name || ''), args = params.arguments === undefined ? {} : params.arguments;
+    const refus = argsInvalides(nom, args);
+    if (refus) return resultat(id, { ...texte('Arguments refusés : ' + refus), isError: true });
     try {
       if (await appOuverte()) { const r = await appeler('appel', nom, args); return resultat(id, { ...texte(r), isError: !!(r && r.erreur) }); }
       return resultat(id, texte(horsLigne(nom, args)));
