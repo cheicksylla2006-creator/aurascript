@@ -1,0 +1,4 @@
+# Seuls le plugin Claude et la documentation vivent ici. Les binaires Linux vont dans les Releases.
+*.AppImage
+*.deb
+node_modules/
