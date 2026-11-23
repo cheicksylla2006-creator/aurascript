@@ -1,12 +1,12 @@
 # Security policy — Aura Script
 
-*Version 2.6.0. Français ci-dessous.*
+*Version 2.8.0. Français ci-dessous.*
 
 ## Supported versions
 
 | Version | Supported |
 |---|---|
-| 2.6.0 and later | ✅ |
+| 2.7.1 and later | ✅ |
 | 2.5.0 and earlier | ❌ — please update (Microsoft Store / Linux releases) |
 
 ## How the local MCP connector is protected
