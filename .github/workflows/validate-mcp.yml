@@ -45,8 +45,9 @@ jobs:
           export GEMINI_CLI_TRUST_WORKSPACE=true
           mkdir -p "$HOME"
           gemini --version
-          gemini extensions link "$GITHUB_WORKSPACE"
-          output="$(gemini extensions list 2>&1)"
+          timeout 90s gemini extensions install "$GITHUB_WORKSPACE" --consent --skip-settings
+          cd "$RUNNER_TEMP"
+          output="$(timeout 60s gemini extensions list 2>&1)"
           printf '%s\n' "$output"
           printf '%s' "$output" | grep -qi 'aurascript'
           test -f "$HOME/.gemini/extensions/aurascript/gemini-extension.json"
