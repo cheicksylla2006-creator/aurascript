@@ -1,6 +1,6 @@
 # Security policy — Aura Script
 
-*Version 2.8.0. Français ci-dessous.*
+*Version 2.6.0. Français ci-dessous.*
 
 ## Supported versions
 
