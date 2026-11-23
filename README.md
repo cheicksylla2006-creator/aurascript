@@ -64,14 +64,22 @@ The extension manifest is **gemini-extension.json**. It launches **server/aura-m
 
 ## Connect Claude
 
-For Claude Code, install the repository as a Claude plugin marketplace:
+### Claude Code
+
+The repository includes a Claude Code plugin. You can install it from this custom marketplace:
 
 ```text
 /plugin marketplace add cheicksylla2006-creator/aurascript
 /plugin install aura-script@aura-script
 ```
 
-Claude Desktop and other MCP-compatible clients can use the same local MCP server through their stdio configuration. See the connector documentation in this repository and the settings exposed by Aura Script.
+This is a community/custom marketplace installation. It is separate from Anthropic's curated plugin directory; third-party submissions to that directory are now handled through [Claude's plugin directory manager](https://claude.ai/directory/manage), not pull requests to Anthropic's `claude-plugins-official` repository.
+
+### Claude Desktop
+
+Claude Desktop supports local MCP servers and desktop extensions. The Aura Script connector currently provides a stdio MCP server; use the local MCP configuration documented by Aura Script. A single-click `.mcpb` desktop-extension package and submission to Anthropic's desktop extensions directory are separate packaging/review steps and are not claimed to be available yet.
+
+See [Anthropic distribution notes](docs/anthropic-distribution.md) for the current routes and preparation checklist.
 
 ## How the connector works
 
