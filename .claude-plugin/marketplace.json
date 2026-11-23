@@ -10,7 +10,7 @@
       "name": "aura-script",
       "source": "./",
       "description": "Use Aura Script — a free, local workspace for Windows and Linux — documents, slides, spreadsheets, canvas and code — as Claude’s working environment. Everything stays on your PC.",
-      "version": "2.6.0"
+      "version": "2.8.0"
     }
   ]
 }
