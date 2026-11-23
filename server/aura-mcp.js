@@ -16,7 +16,7 @@
 const fs = require('fs'), path = require('path'), net = require('net'), crypto = require('crypto');
 const VERSIONS = ['2025-11-25', '2025-06-18', '2025-03-26', '2024-11-05'];
 /* Version du connecteur = version d'Aura Script (vérifié par tools/test-mcp.js). */
-const VERSION = '2.6.0';
+const VERSION = '2.8.0';
 /* Métadonnées de sécurité de CHAQUE outil, en mode connecté comme hors ligne
    (exigence de l'annuaire Anthropic : title + readOnlyHint / destructiveHint).
    Règle suivie : lecture seule → readOnlyHint ; toute écriture (même une création)
