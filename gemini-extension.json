@@ -1,0 +1,15 @@
+{
+  "name": "aurascript",
+  "version": "2.8.0",
+  "description": "Connect Gemini CLI to your local Aura Script workspace through a private MCP connector.",
+  "mcpServers": {
+    "aura-script": {
+      "command": "node",
+      "args": [
+        "${extensionPath}${/}server${/}aura-mcp.js"
+      ],
+      "cwd": "${extensionPath}"
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}
