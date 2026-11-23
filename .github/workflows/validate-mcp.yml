@@ -1,0 +1,28 @@
+name: Validate MCP extension
+
+on:
+  push:
+    branches: [main, "feat/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate JavaScript syntax
+        run: node --check server/aura-mcp.js
+      - name: Validate extension manifests
+        run: |
+          node -e "const fs=require('node:fs'); const m=JSON.parse(fs.readFileSync('gemini-extension.json','utf8')); if (m.name !== 'aurascript') throw new Error('Unexpected extension name'); if (!m.mcpServers?.['aura-script']) throw new Error('Missing MCP server'); if (!fs.existsSync('server/aura-mcp.js')) throw new Error('MCP server file missing'); if (!fs.existsSync(m.contextFileName)) throw new Error('Context file missing'); JSON.parse(fs.readFileSync('.claude-plugin/plugin.json','utf8')); JSON.parse(fs.readFileSync('.claude-plugin/marketplace.json','utf8')); console.log('Manifests OK');"
+      - name: Run MCP stdio smoke test
+        run: node --test tests/*.test.js
