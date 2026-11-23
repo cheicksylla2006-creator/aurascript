@@ -25,6 +25,20 @@ On Linux, make the AppImage executable and run it: `chmod +x Aura-Script-x86_64.
 - **Private by design** — no account, no ads, no analytics; documents are encrypted on your computer. Available in 6 languages, in violet or Sakura pink, light, dark or paper mode.
 - **Works with AI assistants** — a local MCP connector lets Claude, Gemini CLI, Codex, Copilot, Cursor, Windsurf or LM Studio work inside Aura Script (this plugin).
 
+## Documentation
+
+Full documentation of Aura Script, in English and French. It describes version 2.8.0; Microsoft Store updates roll out progressively.
+
+| Topic | English | Français |
+|---|---|---|
+| Overview and what's new | [docs/en/README.md](docs/en/README.md) | [docs/fr/PRESENTATION.md](docs/fr/PRESENTATION.md) |
+| Version history | [docs/en/CHANGELOG.md](docs/en/CHANGELOG.md) | [docs/fr/HISTORIQUE.md](docs/fr/HISTORIQUE.md) |
+| Security and privacy | [docs/en/SECURITY.md](docs/en/SECURITY.md) | [docs/fr/SECURITE.md](docs/fr/SECURITE.md) |
+| AI, dictation and search models | [docs/en/MODELS.md](docs/en/MODELS.md) | [docs/fr/MODELES.md](docs/fr/MODELES.md) |
+| Local MCP connector | [docs/en/MCP-CONNECTOR.md](docs/en/MCP-CONNECTOR.md) | [docs/fr/CONNECTEUR-MCP.md](docs/fr/CONNECTEUR-MCP.md) |
+
+Website: [aura-script.com](https://www.aura-script.com) · Contact: cheicksylla615@gmail.com
+
 ## Install the Claude plugin
 
 ```
