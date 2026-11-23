@@ -46,6 +46,6 @@ jobs:
           gemini --version
           gemini extensions link "$GITHUB_WORKSPACE"
           output="$(gemini extensions list 2>&1)"
-          printf '%s\\n' "$output"
+          printf '%s\n' "$output"
           printf '%s' "$output" | grep -qi 'aurascript'
           test -f "$HOME/.gemini/extensions/aurascript/gemini-extension.json"
