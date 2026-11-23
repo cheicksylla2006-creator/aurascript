@@ -42,6 +42,7 @@ jobs:
         shell: bash
         run: |
           export HOME="$RUNNER_TEMP/gemini-home"
+          export GEMINI_CLI_TRUST_WORKSPACE=true
           mkdir -p "$HOME"
           gemini --version
           gemini extensions link "$GITHUB_WORKSPACE"
