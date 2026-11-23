@@ -1,6 +1,6 @@
 # Security policy — Aura Script
 
-*Version 2.6.0. Français ci-dessous.*
+*Version 2.8.0. Français ci-dessous.*
 
 ## Supported versions
 
@@ -9,7 +9,7 @@
 | 2.6.0 and later | ✅ |
 | 2.5.0 and earlier | ❌ — please update (Microsoft Store / Linux releases) |
 
-## How the Claude connector is protected
+## How the local MCP connector is protected
 
 **Local channel only**
 - Named pipe on Windows, private socket on Linux (`0600` in a `0700` folder), with a random name at each launch.
