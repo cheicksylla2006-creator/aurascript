@@ -7,12 +7,11 @@ const readline = require('node:readline');
 const path = require('node:path');
 const os = require('node:os');
 const fs = require('node:fs');
-const { once } = require('node:events');
 
 test('MCP server initializes and exposes safe offline tools without the app', async (t) => {
   const isolatedHome = fs.mkdtempSync(path.join(os.tmpdir(), 'aura-mcp-test-'));
   const child = spawn(process.execPath, [path.join(__dirname, '..', 'server', 'aura-mcp.js')], {
-    env: { ...process.env, HOME: isolatedHome, USERPROFILE: isolatedHome },
+    env: { ...process.env, HOME: isolatedHome, USERPROFILE: isolatedHome, AURA_CONNEXION: '' },
     stdio: ['pipe', 'pipe', 'pipe']
   });
   t.after(async () => {
@@ -22,7 +21,6 @@ test('MCP server initializes and exposes safe offline tools without the app', as
 
   const rl = readline.createInterface({ input: child.stdout });
   const pending = new Map();
-  const messages = [];
   rl.on('line', line => {
     let message;
     try { message = JSON.parse(line); }
@@ -31,8 +29,6 @@ test('MCP server initializes and exposes safe offline tools without the app', as
     if (waiter) {
       pending.delete(message.id);
       waiter.resolve(message);
-    } else {
-      messages.push(message);
     }
   });
 
