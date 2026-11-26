@@ -2,13 +2,15 @@
 
 <img src=".claude-plugin/icon.png" width="96" alt="Aura Script">
 
-**Aura Script** is a free, independent writing workspace for Windows and Linux: real A4 documents, presentations, spreadsheets, canvas boards, code and PDF, with a local AI. This plugin lets Claude use Aura Script as its **working environment**: Claude can read what you are working on, search your library, and write documents, slides and spreadsheets straight into the app — while every file stays on your computer.
+**Aura Script** is an independent writing workspace for Windows and Linux: real A4 documents, presentations, spreadsheets, canvas boards, code and PDF, with a local AI. This plugin lets Claude use Aura Script as its **working environment**: Claude can read what you are working on, search your library, and write documents, slides and spreadsheets straight into the app — while every file stays on your computer.
+
+Start with the free edition. The paid **Aura Script Pro** plan unlocks additional features. See the [official Aura Script website](https://www.aura-script.com/#telecharger) for the current offer.
 
 ## Download Aura Script
 
 | Platform | Get it |
 |---|---|
-| **Windows** (x64 and ARM) | [Microsoft Store](https://apps.microsoft.com/detail/9nsqkw8c6xp8) — free, automatic updates |
+| **Windows** (x64 and ARM) | [Microsoft Store](https://apps.microsoft.com/detail/9nsqkw8c6xp8) — automatic updates |
 | **Linux** (x86_64) | [AppImage](https://github.com/cheicksylla2006-creator/aurascript/releases/latest/download/Aura-Script-x86_64.AppImage) (any distribution) · [.deb](https://github.com/cheicksylla2006-creator/aurascript/releases/latest/download/aura-script_amd64.deb) (Ubuntu, Debian, Mint) · [all releases](https://github.com/cheicksylla2006-creator/aurascript/releases) |
 
 On Linux, make the AppImage executable and run it: `chmod +x Aura-Script-x86_64.AppImage && ./Aura-Script-x86_64.AppImage`. This repository contains the Claude plugin and the Linux releases; the application's source code is not published.
@@ -16,7 +18,7 @@ On Linux, make the AppImage executable and run it: `chmod +x Aura-Script-x86_64.
 ## What Aura Script can do
 
 - **Six spaces in one app** — A4 documents with templates, spell-check and equations; presentations with animations and PowerPoint export; spreadsheets with formulas and charts; a canvas for shapes, stickers, mind maps and kanban; a code editor; a PDF reader with annotations.
-- **Aurora, a local AI** — summaries, rewrites, outlines and translations that run entirely on your computer, offline, with no subscription.
+- **Aurora, a local AI** — summaries, rewrites, outlines and translations that run entirely on your computer, offline.
 - **A brain, even without AI** — summary, keywords, outline, readability, proofreading and natural-language commands (“insert a 3x4 table”, “analyse the sheet”) work instantly with no model and no connection; AI comes as reinforcement and its suggestions are checked.
 - **Health** — templates for consultation reports, medication schedules, health diaries and care handovers; extraction of medications and vital signs, medical abbreviations, de-identification. Health text is never sent to an online AI without your consent.
 - **Or your own AI** — connect ChatGPT, Claude, Gemini, Mistral or OpenRouter with your own key; it becomes the main assistant. Every AI change is shown word by word for you to accept or reject.
@@ -36,7 +38,7 @@ Or add it from the Claude directory once it is listed.
 
 ## Requirements
 
-- **Aura Script 2.6.0 or later** on Windows ([Microsoft Store](https://apps.microsoft.com/detail/9nsqkw8c6xp8)) or Linux ([releases](https://github.com/cheicksylla2006-creator/aurascript/releases)), free.
+- **Aura Script 2.6.0 or later** on Windows ([Microsoft Store](https://apps.microsoft.com/detail/9nsqkw8c6xp8)) or Linux ([releases](https://github.com/cheicksylla2006-creator/aurascript/releases)).
 - In Aura Script: **Settings › Connectors › Enable the local MCP connector** (or "Connect detected assistants").
 - Requires **Aura Script 2.5.1 or later** (signed protocol).
 - Node.js is used to start the connector (bundled with Claude Desktop; install it for Claude Code).
