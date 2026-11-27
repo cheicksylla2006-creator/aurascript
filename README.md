@@ -2,9 +2,9 @@
 
 <img src=".claude-plugin/icon.png" width="96" alt="Aura Script">
 
-**Aura Script** is an independent writing workspace for Windows and Linux: real A4 documents, presentations, spreadsheets, canvas boards, code and PDF, with a local AI. This plugin lets Claude use Aura Script as its **working environment**: Claude can read what you are working on, search your library, and write documents, slides and spreadsheets straight into the app — while every file stays on your computer.
+**Aura Script** is an independent writing workspace for Windows and Linux: real A4 documents, presentations, spreadsheets, canvas boards, code and PDF, with a local AI. This plugin lets Claude use Aura Script as its **working environment**: Claude can read what you are working on, search your library, and write documents, slides and spreadsheets straight into the app — while Aura Script keeps its document library on your computer by default. Content shared with an external assistant is processed according to that provider's terms.
 
-Start with the free edition. The paid **Aura Script Pro** plan unlocks additional features. See the [official Aura Script website](https://www.aura-script.com/#telecharger) for the current offer.
+Start with the free edition. **Aura Script Pro** is being prepared and is not yet on sale. See the [official Aura Script website](https://www.aura-script.com/#telecharger) for the current offer.
 
 ## Download Aura Script
 
@@ -14,6 +14,23 @@ Start with the free edition. The paid **Aura Script Pro** plan unlocks additiona
 | **Linux** (x86_64) | [AppImage](https://github.com/cheicksylla2006-creator/aurascript/releases/latest/download/Aura-Script-x86_64.AppImage) (any distribution) · [.deb](https://github.com/cheicksylla2006-creator/aurascript/releases/latest/download/aura-script_amd64.deb) (Ubuntu, Debian, Mint) · [all releases](https://github.com/cheicksylla2006-creator/aurascript/releases) |
 
 On Linux, make the AppImage executable and run it: `chmod +x Aura-Script-x86_64.AppImage && ./Aura-Script-x86_64.AppImage`. This repository contains the Claude plugin and the Linux releases; the application's source code is not published.
+
+## Development update — Aura Script 3.0 (not yet released)
+
+The 3.0 source build is under validation. This section describes upcoming features, **not** a new downloadable release. Use the Microsoft Store or published GitHub releases for the currently available version.
+
+Planned free additions:
+
+- **Canvas redesign:** print and social-media frames, pen and shape tools, gradients, brand kit, precise positioning, PNG/PDF/SVG export.
+- **Batch processing:** document selection, preview, history, cancellation and undo.
+- **Workflows:** reusable sequences, portable JSON import/export and built-in templates.
+- **Export presets:** PDF, Word, Markdown, HTML and text, with naming patterns.
+- **Versioned encrypted backups:** a destination chosen by the user, retention and restoration previews.
+- **Aurora:** additional in-app tools for design and automation. The public MCP connector retains its existing 13 tools.
+
+The proposed Pro edition adds advanced document analysis and side-by-side document/version comparison. The four new automation and backup features remain free. No price or purchase availability has been announced.
+
+Windows installation and exports, Linux packaging and release validation are still pending. Follow [release notes](https://www.aura-script.com/versions) for updates.
 
 ## What Aura Script can do
 
@@ -94,12 +111,12 @@ Claude reads the document, then calls `edit_text`; Aura Script shows a word-by-w
 
 ## Privacy Policy
 
-Aura Script and this plugin collect **no personal data**. Your documents are stored only on your PC, encrypted by Windows (DPAPI). The connector communicates only with Aura Script on the same computer, through a local named pipe; it sends nothing to the plugin's author or to any third party. When you use the tools, the content that Claude reads or writes is exchanged between Aura Script and your Claude app, and is then handled under Anthropic's own privacy policy. A short activity log of tool calls (time, assistant, tool name, result) is kept locally in Aura Script and can be cleared at any time. Full policy: https://aura-script.com/confidentialite/
+Aura Script is designed for local-first document storage, without an obligatory account. Its Windows edition uses operating-system protection for locally stored data; see the current privacy policy for platform-specific details. The connector communicates with Aura Script on the same computer via a local channel (named pipe on Windows or socket on Linux); it sends nothing to the plugin's author or to any third party. When you use the tools, the content that Claude reads or writes is exchanged between Aura Script and your Claude app, and is then handled under Anthropic's own privacy policy. A short activity log of tool calls (time, assistant, tool name, result) is kept locally in Aura Script and can be cleared at any time. Full policy: https://www.aura-script.com/confidentialite/
 
 ## Support
 
 - E-mail: cheicksylla615@gmail.com
-- https://aura-script.com/claude/
+- https://www.aura-script.com/
 - In the app: Help › About.
 
 ## License
