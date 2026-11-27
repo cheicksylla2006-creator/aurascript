@@ -15,22 +15,22 @@ Start with the free edition. **Aura Script Pro** is priced at **US$15 as a one-t
 
 On Linux, make the AppImage executable and run it: `chmod +x Aura-Script-x86_64.AppImage && ./Aura-Script-x86_64.AppImage`. This repository contains the Claude plugin and the Linux releases; the application's source code is not published.
 
-## Development update — Aura Script 3.0 (not yet released)
+## What's new in Aura Script 3.0
 
-The 3.0 source build is under validation. This section describes upcoming features, **not** a new downloadable release. Use the Microsoft Store or published GitHub releases for the currently available version.
+Aura Script 3.0 is available on **Linux** now ([release v3.0.0](https://github.com/cheicksylla2006-creator/aurascript/releases/tag/v3.0.0)). On **Windows**, it reaches the Microsoft Store after Windows validation and certification.
 
-Planned free additions:
+Free additions:
 
 - **Canvas redesign:** print and social-media frames, pen and shape tools, gradients, brand kit, precise positioning, PNG/PDF/SVG export.
-- **Batch processing:** document selection, preview, history, cancellation and undo.
+- **Batch processing:** document selection, preview, history, stop and undo — your typing during a batch is never overwritten.
 - **Workflows:** reusable sequences, portable JSON import/export and built-in templates.
 - **Export presets:** PDF, Word, Markdown, HTML and text, with naming patterns.
-- **Versioned encrypted backups:** a destination chosen by the user, retention and restoration previews.
-- **Aurora:** additional in-app tools for design and automation. The public MCP connector retains its existing 13 tools.
+- **Versioned encrypted backups:** a destination chosen by you, retention, incomplete backups clearly flagged, restoration previews.
+- **Aurora:** additional in-app tools for design and automation. The public MCP connector keeps its existing 13 tools.
 
-The proposed Pro edition adds advanced document analysis and side-by-side document/version comparison. The four new automation and backup features remain free. The price is set at US$15 for an individual license covering up to three devices; purchase availability will be announced after release validation.
+3.0 also hardens reliability and security: AI edits never break characters, links or formatting; "Saved" is shown only after a confirmed write; regular expressions run in an isolated, time-limited worker; restored content is sanitized. Details in [CHANGELOG.md](CHANGELOG.md).
 
-Windows installation and exports, Linux packaging and release validation are still pending. Follow [release notes](https://www.aura-script.com/versions) or [CHANGELOG.md](CHANGELOG.md) for updates.
+The Pro edition adds advanced document analysis and side-by-side document/version comparison. The automation and backup features remain free. The price is set at US$15 for an individual license covering up to three devices; purchase availability will be announced on the [official website](https://www.aura-script.com/#offres).
 
 ## What Aura Script can do
 

@@ -10,7 +10,7 @@
       "name": "aura-script",
       "source": "./",
       "description": "Connect Claude to Aura Script, a local-first workspace for Windows and Linux with documents, slides, spreadsheets, Canvas, code and PDF. Shared content is subject to the external assistant's terms.",
-      "version": "2.6.0"
+      "version": "3.0.0"
     }
   ]
 }
