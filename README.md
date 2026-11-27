@@ -4,7 +4,7 @@
 
 **Aura Script** is an independent writing workspace for Windows and Linux: real A4 documents, presentations, spreadsheets, canvas boards, code and PDF, with a local AI. This plugin lets Claude use Aura Script as its **working environment**: Claude can read what you are working on, search your library, and write documents, slides and spreadsheets straight into the app — while Aura Script keeps its document library on your computer by default. Content shared with an external assistant is processed according to that provider's terms.
 
-Start with the free edition. **Aura Script Pro** is priced at **US$15 as a one-time individual license for up to three devices** (applicable taxes may vary by location). Sales are not yet open. See the [official website](https://www.aura-script.com/#offres) for the offer and launch status.
+Start with the free edition. **Aura Script Pro** is priced at **US$15 per year as an individual subscription for up to four devices (automatic annual renewal until canceled)** (applicable taxes may vary by location). Sales are not yet open. See the [official website](https://www.aura-script.com/#offres) for the offer and launch status.
 
 ## Download Aura Script
 
@@ -30,7 +30,7 @@ Planned free additions:
 - **Versioned encrypted backups:** a destination chosen by the user, retention and restoration previews.
 - **Aurora:** additional in-app tools for design and automation. The public MCP connector retains its existing 13 tools.
 
-The proposed Pro edition adds advanced document analysis and side-by-side document/version comparison. The four new automation and backup features remain free. The price is set at US$15 for an individual license covering up to three devices; purchase availability will be announced after release validation.
+The proposed Pro edition adds advanced document analysis and side-by-side document/version comparison. The four new automation and backup features remain free. The price is set at US$15 per year for an individual subscription covering up to four devices, renewing annually until canceled. AuraScript Web access is planned for active Pro subscribers, but is not yet available. Purchase availability will be announced after release validation.
 
 Windows certification is pending; check published release assets for Linux availability. Follow [release notes](https://www.aura-script.com/versions) or [CHANGELOG.md](CHANGELOG.md) for updates.
 
@@ -120,7 +120,7 @@ Aura Script is an independent project developed by SyllaBora. If the application
 
 **[Support Aura Script on Buy Me a Coffee](https://www.buymeacoffee.com/cheick)**
 
-Support is optional, separate from the Pro license, and does not unlock paid features or confer ownership, equity, or financial returns. You can also help at no cost by reporting reproducible issues, sharing the project, or providing feedback.
+Support is optional, separate from the Pro subscription, and does not unlock paid features or confer ownership, equity, or financial returns. You can also help at no cost by reporting reproducible issues, sharing the project, or providing feedback.
 
 ## Support
 
