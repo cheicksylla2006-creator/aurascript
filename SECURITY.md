@@ -1,12 +1,13 @@
 # Security policy — Aura Script
 
-*Version 2.6.0. Français ci-dessous.*
+*Version 3.0.0. Français ci-dessous.*
 
 ## Supported versions
 
 | Version | Supported |
 |---|---|
-| 2.6.0 and later | ✅ |
+| 3.0.0 (Linux) | ✅ |
+| 2.6.0 – 2.8.x | ✅ (current Microsoft Store series until 3.0 is certified) |
 | 2.5.0 and earlier | ❌ — please update (Microsoft Store / Linux releases) |
 
 ## How the Claude connector is protected
@@ -37,6 +38,8 @@
 - Imported documents are sanitized.
 - Documents are encrypted at rest by the operating system.
 - Group mode is restricted to the local network, AES-256-GCM encrypted with per-session keys and replay protection.
+- Since 3.0: regular expressions (from you, an imported workflow or an AI) are tried in an isolated, time-limited worker before use; AI tools that write files ask for approval; restored versions and AI undo are sanitized; documents cannot contain forms; Canvas images are limited to embedded image data; Windows reserved file names are neutralized on export.
+- Encrypted backups (AES-256-GCM, scrypt) have an authenticated header, bounded key-derivation parameters and a bounded decompressed size; backup names cannot escape the chosen folder.
 
 Tool annotations (`readOnlyHint` / `destructiveHint`) inform the assistant; they are **not** the security boundary — the checks above are.
 
@@ -58,5 +61,6 @@ Le connecteur n'utilise qu'un canal local, sans port réseau ni serveur.
 - **Échanges signés** : chaque échange est signé (HMAC-SHA256, code à usage unique, réponses signées). La clé, renouvelée à chaque lancement, ne circule jamais.
 - **Vérifications** : les arguments sont vérifiés à trois niveaux.
 - **Vos choix** : vous choisissez ce que l'assistant peut lire et vous approuvez chaque modification.
+- **Depuis la 3.0** : expressions régulières essayées dans un espace isolé et limité dans le temps, écriture de fichiers par l'IA soumise à votre accord, contenus restaurés nettoyés, sauvegardes chiffrées à en-tête authentifié.
 
 Pour signaler une faille : **cheicksylla615@gmail.com**, sans publication avant correction.
