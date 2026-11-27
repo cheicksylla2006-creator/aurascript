@@ -2,7 +2,7 @@
 
 ## 3.0.0 — In validation (not released)
 
-Development preview based on the November 27, 2026 source version, not a downloadable release.
+Development preview based on the November 27, 2026 source version. A newer Windows candidate has been submitted for Microsoft Store certification; this does not establish availability.
 
 ### Free
 - Canvas: preset print and social frames, pen, shapes, brand kit, resizing, precise alignment and PNG/PDF/SVG export.
@@ -15,7 +15,7 @@ Development preview based on the November 27, 2026 source version, not a downloa
 ### Pro — not on sale
 - Advanced document analysis and side-by-side document/version comparison with HTML export.
 - Limited previews without a license.
-- Pricing and commercial conditions remain undecided.
+- Planned price: US$15 once, individual license for up to three devices. Sales remain closed; final commercial terms are pending.
 
 ### Release gates
 - The external MCP tool set remains unchanged (13 tools); internal Aurora tools are not exposed.
