@@ -1,6 +1,6 @@
 # Security policy — Aura Script
 
-*Version 2.6.0. Français ci-dessous.*
+*Connector security overview. Français ci-dessous.*
 
 ## Supported versions
 
@@ -35,12 +35,12 @@
 **Inside the app**
 - Content-Security-Policy with no inline or eval scripts.
 - Imported documents are sanitized.
-- Documents are encrypted at rest by the operating system.
+- Local storage protection depends on the platform and configuration; consult the current privacy policy.
 - Group mode is restricted to the local network, AES-256-GCM encrypted with per-session keys and replay protection.
 
 Tool annotations (`readOnlyHint` / `destructiveHint`) inform the assistant; they are **not** the security boundary — the checks above are.
 
-These protections are verified by an automated adversarial test suite, run before every release: forged and replayed requests, channel impersonation, malformed arguments, script injection, and tampered encrypted messages. The application's source code is not public.
+Automated adversarial tests cover scenarios including: forged and replayed requests, channel impersonation, malformed arguments, script injection, and tampered encrypted messages. The application's source code is not public.
 
 ## Known limits
 - No third-party audit yet.
@@ -48,7 +48,7 @@ These protections are verified by an automated adversarial test suite, run befor
 
 ## Reporting a vulnerability
 
-E-mail **cheicksylla615@gmail.com** with the details and steps to reproduce. Please do not disclose publicly before a fix is released. You will get an answer within 7 days.
+E-mail **cheicksylla615@gmail.com** with the details and steps to reproduce. Please do not disclose publicly before a fix is released. We aim to acknowledge reports within 7 days.
 
 ---
 
