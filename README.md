@@ -11,13 +11,13 @@ Start with the free edition. **Aura Script Pro** is priced at **US$15 as a one-t
 | Platform | Get it |
 |---|---|
 | **Windows** (x64 and ARM) | [Microsoft Store](https://apps.microsoft.com/detail/9nsqkw8c6xp8) — automatic updates |
-| **Linux** (x86_64) | [AppImage](https://github.com/cheicksylla2006-creator/aurascript/releases/latest/download/Aura-Script-x86_64.AppImage) (any distribution) · [.deb](https://github.com/cheicksylla2006-creator/aurascript/releases/latest/download/aura-script_amd64.deb) (Ubuntu, Debian, Mint) · [all releases](https://github.com/cheicksylla2006-creator/aurascript/releases) |
+| **Linux** (x86_64) | [AppImage and .deb — [check available release assets](https://github.com/cheicksylla2006-creator/aurascript/releases) |
 
 On Linux, make the AppImage executable and run it: `chmod +x Aura-Script-x86_64.AppImage && ./Aura-Script-x86_64.AppImage`. This repository contains the Claude plugin and the Linux releases; the application's source code is not published.
 
-## Development update — Aura Script 3.0 (not yet released)
+## Development update — AuraScript 3.0 series
 
-The 3.0 source build is under validation. This section describes upcoming features, **not** a new downloadable release. Use the Microsoft Store or published GitHub releases for the currently available version.
+The latest Windows candidate has been submitted to the Microsoft Store for certification. Availability is not yet confirmed. Use the Microsoft Store or published GitHub releases for the currently available version.
 
 Planned free additions:
 
@@ -30,7 +30,7 @@ Planned free additions:
 
 The proposed Pro edition adds advanced document analysis and side-by-side document/version comparison. The four new automation and backup features remain free. The price is set at US$15 for an individual license covering up to three devices; purchase availability will be announced after release validation.
 
-Windows installation and exports, Linux packaging and release validation are still pending. Follow [release notes](https://www.aura-script.com/versions) or [CHANGELOG.md](CHANGELOG.md) for updates.
+Windows certification is pending; check published release assets for Linux availability. Follow [release notes](https://www.aura-script.com/versions) or [CHANGELOG.md](CHANGELOG.md) for updates.
 
 ## What Aura Script can do
 
@@ -41,7 +41,7 @@ Windows installation and exports, Linux packaging and release validation are sti
 - **Or your own AI** — connect ChatGPT, Claude, Gemini, Mistral or OpenRouter with your own key; it becomes the main assistant. Text changes can be reviewed and accepted or rejected; connector edits follow your chosen permissions.
 - **It adapts on its own** — Aura Script recognises what you are writing (music, maths, physics, chemistry, biology, computing, languages, economics, law, screenplay, poetry) and shows the right tools: guitar and piano chord diagrams, chemical equation balancing, toned pinyin, screenplay layout…
 - **Group mode** — work together on the same canvas over your local network, end-to-end encrypted, with no server.
-- **Private by design** — no account, no ads, no analytics; documents are encrypted on your computer. Available in 6 languages, in violet or Sakura pink, light, dark or paper mode.
+- **Private by design** — no account, no ads, no analytics; local data protection varies by platform; see the privacy policy. Available in 6 languages, in violet or Sakura pink, light, dark or paper mode.
 - **Works with AI assistants** — a local MCP connector lets Claude, Gemini CLI, Codex, Copilot, Cursor, Windsurf or LM Studio work inside Aura Script (this plugin).
 
 ## Install the Claude plugin
