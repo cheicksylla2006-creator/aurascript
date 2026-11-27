@@ -4,18 +4,18 @@
 
 **Aura Script** is an independent writing workspace for Windows and Linux: real A4 documents, presentations, spreadsheets, canvas boards, code and PDF, with a local AI. This plugin lets Claude use Aura Script as its **working environment**: Claude can read what you are working on, search your library, and write documents, slides and spreadsheets straight into the app — while Aura Script keeps its document library on your computer by default. Content shared with an external assistant is processed according to that provider's terms.
 
-Start with the free edition. **Aura Script Pro** is priced at **US$15 per year as an individual subscription for up to four devices (automatic annual renewal until canceled)** (applicable taxes may vary by location). Sales are not yet open. See the [official website](https://www.aura-script.com/#offres) for the offer and launch status.
+Start with the free edition. **Aura Script Pro** is priced at **US$15 per year as an individual subscription for up to four devices (automatic annual renewal until canceled)** (applicable taxes may vary by location). Sales are not yet open. See the [official Pro offer and launch status](https://www.aura-script.com/#offres). When sales open, sign in to your AuraScript account before subscribing through Polar so that the subscription is linked to your account. The four-device limit is shared between Desktop and Web. GitHub releases remain free to download; no GitHub repository access is sold.
 
 ## Download Aura Script
 
 | Platform | Get it |
 |---|---|
 | **Windows** (x64 and ARM) | [Microsoft Store](https://apps.microsoft.com/detail/9nsqkw8c6xp8) — automatic updates |
-| **Linux** (x86_64) | [AppImage and .deb — [check available release assets](https://github.com/cheicksylla2006-creator/aurascript/releases) |
+| **Linux** (x86_64) | [AppImage and .deb — check available release assets](https://github.com/cheicksylla2006-creator/aurascript/releases) |
 
 On Linux, make the AppImage executable and run it: `chmod +x Aura-Script-x86_64.AppImage && ./Aura-Script-x86_64.AppImage`. This repository contains the Claude plugin and the Linux releases; the application's source code is not published.
 
-**Quick links:** [Official website](https://www.aura-script.com/) · [Windows download](https://apps.microsoft.com/detail/9nsqkw8c6xp8) · [Linux releases](https://github.com/cheicksylla2006-creator/aurascript/releases) · [Report feedback](https://github.com/cheicksylla2006-creator/aurascript/issues) · [Support development](https://www.aura-script.com/#soutenir).
+**Quick links:** [Official website](https://www.aura-script.com/) · [Windows download](https://apps.microsoft.com/detail/9nsqkw8c6xp8) · [Linux releases](https://github.com/cheicksylla2006-creator/aurascript/releases) · [Report feedback](https://github.com/cheicksylla2006-creator/aurascript/issues) · [Support development](https://www.buymeacoffee.com/cheick).
 
 ## Development update — AuraScript 3.0 series
 
