@@ -4,7 +4,7 @@
 
 **Aura Script** is an independent writing workspace for Windows and Linux: real A4 documents, presentations, spreadsheets, canvas boards, code and PDF, with a local AI. This plugin lets Claude use Aura Script as its **working environment**: Claude can read what you are working on, search your library, and write documents, slides and spreadsheets straight into the app — while Aura Script keeps its document library on your computer by default. Content shared with an external assistant is processed according to that provider's terms.
 
-Start with the free edition. **Aura Script Pro** is being prepared and is not yet on sale. See the [official Aura Script website](https://www.aura-script.com/#telecharger) for the current offer.
+Start with the free edition. **Aura Script Pro** is priced at **US$15 as a one-time individual license for up to three devices** (applicable taxes may vary by location). Sales are not yet open. See the [official website](https://www.aura-script.com/#offres) for the offer and launch status.
 
 ## Download Aura Script
 
@@ -28,7 +28,7 @@ Planned free additions:
 - **Versioned encrypted backups:** a destination chosen by the user, retention and restoration previews.
 - **Aurora:** additional in-app tools for design and automation. The public MCP connector retains its existing 13 tools.
 
-The proposed Pro edition adds advanced document analysis and side-by-side document/version comparison. The four new automation and backup features remain free. No price or purchase availability has been announced.
+The proposed Pro edition adds advanced document analysis and side-by-side document/version comparison. The four new automation and backup features remain free. The price is set at US$15 for an individual license covering up to three devices; purchase availability will be announced after release validation.
 
 Windows installation and exports, Linux packaging and release validation are still pending. Follow [release notes](https://www.aura-script.com/versions) or [CHANGELOG.md](CHANGELOG.md) for updates.
 
@@ -111,6 +111,14 @@ Claude reads the document, then calls `edit_text`; Aura Script shows a word-by-w
 ## Privacy Policy
 
 Aura Script is designed for local-first document storage, without an obligatory account. Its Windows edition uses operating-system protection for locally stored data; see the current privacy policy for platform-specific details. The connector communicates with Aura Script on the same computer via a local channel (named pipe on Windows or socket on Linux); it sends nothing to the plugin's author or to any third party. When you use the tools, the content that Claude reads or writes is exchanged between Aura Script and your Claude app, and is then handled under Anthropic's own privacy policy. A short activity log of tool calls (time, assistant, tool name, result) is kept locally in Aura Script and can be cleared at any time. Full policy: https://www.aura-script.com/confidentialite/
+
+## Support independent development
+
+Aura Script is an independent project developed by SyllaBora. If the application or its free connector helps you, you can voluntarily support its maintenance, compatibility testing, documentation and future development.
+
+**[Support Aura Script on Buy Me a Coffee](https://www.buymeacoffee.com/cheick)**
+
+Support is optional, separate from the Pro license, and does not unlock paid features or confer ownership, equity, or financial returns. You can also help at no cost by reporting reproducible issues, sharing the project, or providing feedback.
 
 ## Support
 
