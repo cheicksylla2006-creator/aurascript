@@ -30,7 +30,7 @@ Planned free additions:
 
 The proposed Pro edition adds advanced document analysis and side-by-side document/version comparison. The four new automation and backup features remain free. No price or purchase availability has been announced.
 
-Windows installation and exports, Linux packaging and release validation are still pending. Follow [release notes](https://www.aura-script.com/versions) for updates.
+Windows installation and exports, Linux packaging and release validation are still pending. Follow [release notes](https://www.aura-script.com/versions) or [CHANGELOG.md](CHANGELOG.md) for updates.
 
 ## What Aura Script can do
 
@@ -38,7 +38,7 @@ Windows installation and exports, Linux packaging and release validation are sti
 - **Aurora, a local AI** — summaries, rewrites, outlines and translations that run entirely on your computer, offline.
 - **A brain, even without AI** — summary, keywords, outline, readability, proofreading and natural-language commands (“insert a 3x4 table”, “analyse the sheet”) work instantly with no model and no connection; AI comes as reinforcement and its suggestions are checked.
 - **Health** — templates for consultation reports, medication schedules, health diaries and care handovers; extraction of medications and vital signs, medical abbreviations, de-identification. Health text is never sent to an online AI without your consent.
-- **Or your own AI** — connect ChatGPT, Claude, Gemini, Mistral or OpenRouter with your own key; it becomes the main assistant. Every AI change is shown word by word for you to accept or reject.
+- **Or your own AI** — connect ChatGPT, Claude, Gemini, Mistral or OpenRouter with your own key; it becomes the main assistant. Text changes can be reviewed and accepted or rejected; connector edits follow your chosen permissions.
 - **It adapts on its own** — Aura Script recognises what you are writing (music, maths, physics, chemistry, biology, computing, languages, economics, law, screenplay, poetry) and shows the right tools: guitar and piano chord diagrams, chemical equation balancing, toned pinyin, screenplay layout…
 - **Group mode** — work together on the same canvas over your local network, end-to-end encrypted, with no server.
 - **Private by design** — no account, no ads, no analytics; documents are encrypted on your computer. Available in 6 languages, in violet or Sakura pink, light, dark or paper mode.
@@ -51,13 +51,12 @@ Windows installation and exports, Linux packaging and release validation are sti
 /plugin install aura-script@aura-script
 ```
 
-Or add it from the Claude directory once it is listed.
+These commands are for Claude Code and compatible plugin environments. See the [Claude connector guide](https://www.aura-script.com/claude/) for setup. Directory listing is not assumed.
 
 ## Requirements
 
 - **Aura Script 2.6.0 or later** on Windows ([Microsoft Store](https://apps.microsoft.com/detail/9nsqkw8c6xp8)) or Linux ([releases](https://github.com/cheicksylla2006-creator/aurascript/releases)).
 - In Aura Script: **Settings › Connectors › Enable the local MCP connector** (or "Connect detected assistants").
-- Requires **Aura Script 2.5.1 or later** (signed protocol).
 - Node.js is used to start the connector (bundled with Claude Desktop; install it for Claude Code).
 
 ## How it works
@@ -117,6 +116,7 @@ Aura Script is designed for local-first document storage, without an obligatory 
 
 - E-mail: cheicksylla615@gmail.com
 - https://www.aura-script.com/
+- https://www.aura-script.com/claude/
 - In the app: Help › About.
 
 ## License
