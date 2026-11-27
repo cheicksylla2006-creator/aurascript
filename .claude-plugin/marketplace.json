@@ -1,6 +1,6 @@
 {
   "name": "aura-script",
-  "description": "Aura Script for Claude — use your local Windows writing workspace from Claude.",
+  "description": "Aura Script for Claude — connect your local-first Windows and Linux workspace.",
   "owner": {
     "name": "SyllaBora",
     "email": "cheicksylla615@gmail.com"
@@ -9,7 +9,7 @@
     {
       "name": "aura-script",
       "source": "./",
-      "description": "Use Aura Script — a free, local workspace for Windows and Linux — documents, slides, spreadsheets, canvas and code — as Claude’s working environment. Everything stays on your PC.",
+      "description": "Connect Claude to Aura Script, a local-first workspace for Windows and Linux with documents, slides, spreadsheets, Canvas, code and PDF. Shared content is subject to the external assistant's terms.",
       "version": "2.6.0"
     }
   ]
