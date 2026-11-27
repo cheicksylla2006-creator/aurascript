@@ -15,6 +15,8 @@ Start with the free edition. **Aura Script Pro** is priced at **US$15 as a one-t
 
 On Linux, make the AppImage executable and run it: `chmod +x Aura-Script-x86_64.AppImage && ./Aura-Script-x86_64.AppImage`. This repository contains the Claude plugin and the Linux releases; the application's source code is not published.
 
+**Quick links:** [Official website](https://www.aura-script.com/) · [Windows download](https://apps.microsoft.com/detail/9nsqkw8c6xp8) · [Linux releases](https://github.com/cheicksylla2006-creator/aurascript/releases) · [Report feedback](https://github.com/cheicksylla2006-creator/aurascript/issues) · [Support development](https://www.aura-script.com/#soutenir).
+
 ## Development update — AuraScript 3.0 series
 
 The latest Windows candidate has been submitted to the Microsoft Store for certification. Availability is not yet confirmed. Use the Microsoft Store or published GitHub releases for the currently available version.
