@@ -4,7 +4,7 @@
 
 **Aura Script** is an independent writing workspace for Windows and Linux: real A4 documents, presentations, spreadsheets, canvas boards, code and PDF, with a local AI. This plugin lets Claude use Aura Script as its **working environment**: Claude can read what you are working on, search your library, and write documents, slides and spreadsheets straight into the app — while Aura Script keeps its document library on your computer by default. Content shared with an external assistant is processed according to that provider's terms.
 
-Start with the free edition. **Aura Script Pro** is priced at **US$15 per year as an individual subscription for up to four devices (automatic annual renewal until canceled)** (applicable taxes may vary by location). Sales are not yet open. See the [official Pro offer and launch status](https://www.aura-script.com/#offres). When sales open, sign in to your AuraScript account before subscribing through Polar so that the subscription is linked to your account. The four-device limit is shared between Desktop and Web. GitHub releases remain free to download; no GitHub repository access is sold.
+Start with the free edition. **Aura Script Pro** is priced at **US$15 per year as an individual subscription for up to four devices (automatic annual renewal until canceled)** (applicable taxes may vary by location). Sales are not yet open. See the [official Pro offer and launch status](https://www.aura-script.com/#offres). When sales open, sign in to your AuraScript account before subscribing through Polar so that the subscription is linked to your account. The four-device limit applies to Pro activations across compatible Desktop and Web editions, not to basic free access. GitHub releases remain free to download; no GitHub repository access is sold.
 
 ## Download Aura Script
 
@@ -12,6 +12,7 @@ Start with the free edition. **Aura Script Pro** is priced at **US$15 per year a
 |---|---|
 | **Windows** (x64 and ARM) | [Microsoft Store](https://apps.microsoft.com/detail/9nsqkw8c6xp8) — automatic updates |
 | **Linux** (x86_64) | [AppImage and .deb — check available release assets](https://github.com/cheicksylla2006-creator/aurascript/releases) |
+| **Web** | Free browser edition — in development; public access not yet open |
 
 On Linux, make the AppImage executable and run it: `chmod +x Aura-Script-x86_64.AppImage && ./Aura-Script-x86_64.AppImage`. This repository contains the Claude plugin and the Linux releases; the application's source code is not published.
 
@@ -30,7 +31,7 @@ Planned free additions:
 - **Versioned encrypted backups:** a destination chosen by the user, retention and restoration previews.
 - **Aurora:** additional in-app tools for design and automation. The public MCP connector retains its existing 13 tools.
 
-The proposed Pro edition adds advanced document analysis and side-by-side document/version comparison. The four new automation and backup features remain free. The price is set at US$15 per year for an individual subscription covering up to four devices, renewing annually until canceled. AuraScript Web access is planned for active Pro subscribers, but is not yet available. Purchase availability will be announced after release validation.
+The proposed Pro edition adds advanced document analysis and side-by-side document/version comparison. The four new automation and backup features remain free. The price is set at US$15 per year for an individual subscription covering up to four devices, renewing annually until canceled. AuraScript Web is now planned as a free browser workspace, including guest access without an account. The Web editor is still in development and is not publicly available. Optional AuraScript accounts will connect the desktop and Web editions; encrypted manual backup and restoration are planned for Free and Pro. Pro is planned to add optional encrypted document synchronization through the user's own Google Drive or OneDrive, subject to implementation and validation. Local document storage remains the default. Purchase availability will be announced after release validation.
 
 Windows certification is pending; check published release assets for Linux availability. Follow [release notes](https://www.aura-script.com/versions) or [CHANGELOG.md](CHANGELOG.md) for updates.
 
