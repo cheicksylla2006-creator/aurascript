@@ -1,5 +1,14 @@
 # Aura Script — Release notes
 
+## 3.1 — Development roadmap (not released)
+
+- Free Web editor, including guest access without an account; local browser storage by default.
+- Optional shared AuraScript account for Web and desktop. Guest documents should remain recoverable when signing in.
+- Planned portable encrypted backup and restoration for Free and Pro.
+- Planned Pro synchronization through personal Google Drive or OneDrive; cross-device encryption, conflict handling and recovery remain under development.
+- Pro: US$15/year, individual subscription, automatic annual renewal until canceled, up to four Pro device activations across supported platforms. Sales remain closed.
+- The Web editor, account linking and document synchronization are not publicly available yet. This roadmap is not a release or a guarantee of availability.
+
 ## 3.0.0 — In validation (not released)
 
 Development preview based on the November 27, 2026 source version. A newer Windows candidate has been submitted for Microsoft Store certification; this does not establish availability.
@@ -15,7 +24,7 @@ Development preview based on the November 27, 2026 source version. A newer Windo
 ### Pro — not on sale
 - Advanced document analysis and side-by-side document/version comparison with HTML export.
 - Limited previews without a license.
-- Planned price: US$15 once, individual license for up to three devices. Sales remain closed; final commercial terms are pending.
+- Commercial terms superseded by the 3.1 roadmap above. Sales remain closed.
 
 ### Release gates
 - The external MCP tool set remains unchanged (13 tools); internal Aurora tools are not exposed.
